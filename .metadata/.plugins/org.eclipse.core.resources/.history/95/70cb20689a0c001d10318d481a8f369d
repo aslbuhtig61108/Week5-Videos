@@ -1,0 +1,16 @@
+
+public class Classes {
+
+	public static void main(String[] args) {
+		/* 
+		 * Creating a class
+		 *  
+		 */
+		StringBuilder name = new StringBuilder();
+		StringBuilder name2 = new StringBuilder();
+		
+		
+
+	}
+
+}
