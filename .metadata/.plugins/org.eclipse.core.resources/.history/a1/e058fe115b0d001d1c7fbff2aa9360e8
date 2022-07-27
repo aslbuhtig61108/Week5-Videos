@@ -1,0 +1,12 @@
+
+public class Encapsulation {
+
+	public static void main(String[] args) {
+		
+		Student student = new Student();
+		student.firstName = "Sally";
+		System.out.println(student.firstName);
+
+	}
+
+}

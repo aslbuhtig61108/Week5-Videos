@@ -16,15 +16,18 @@ public class Student {
 	// than each object of the class. Use the keyword 'static'
 	static int numberOfStudents; // access this on the class
 	
-	String firstName;  
-	String lastName;
-	String phoneNumber;
-	int gradeLevel;
+	private String firstName; // Regarding encapsulation, all of our fields need to be private
+	private String lastName;
+	private String phoneNumber;
+	private int gradeLevel;
 	
 	// Define your constructor when using the THIS. method; also known as overload
 	public Student() {} 
-	
-	// Another constructor example that only accepts two string paramters
+
+	/*
+	 * CONSTRUCTORS
+	 */
+	// Another constructor example that only accepts two string parameters
 	public Student(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -32,13 +35,16 @@ public class Student {
 		
 	// To create a CONSTRUCTOR. Only method we don't put a return type
 	public Student(String firstName, String lastName, String phoneNumber, int gradeLevel) {
-		this.firstName = firstName; // this. keyword represents the instance used in the class
-		this.lastName = firstName;
-		this.phoneNumber = firstName;
-		this.phoneNumber = firstName;
+		this.firstName = firstName; // this. keyword represents the instance instantiated in the class; very common to see
+		this.lastName = lastName; // these in constructors
+		this.phoneNumber = phoneNumber;
+		this.gradeLevel = gradeLevel;
 	}
-	
-	// STEPO 2. We want the student to do something. 
+
+	/*
+	 * Public Methods
+	 */
+	// STEP 2. We want the student to do something. 
 	// So, we'll create an action, that the student can do
 	public void introduce() {
 		// doesn't take values. uses the parameters of the student class
@@ -46,7 +52,70 @@ public class Student {
 		System.out.println("I am in grade " + gradeLevel);
 		System.out.println("My phone number is " + phoneNumber);
 	}
+	// We access our properties in Java using something called getters/setters 
+	// (accessors/mutators); getting data and accessing data
+	// public void setFirstName(String firstName) {
+	// this.
+	// }
+	
+	/* 
+	 * Private methods (doesn't need to be accesssed outside but internal class
+	 */
+	private boolean checkLength(String str, int length) {
+		return str.length() > length;
+	}
 	
 	
 	
+	/* 
+	 * Getters and Setters 
+	 * This is where we add our validators to filter input passed into our methods
+	 */ 
+	// STEP 3. 
+	public void setFirstName(String firstName) {
+		if (checkLength(firstName, 1)) { //  any time repeating code consider turning 
+			this.firstName = firstName;	// it into a method()
+		}
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public void setLastName(String lastName) {
+		if (checkLength(lastName, 1)) {
+			this.lastName = lastName;
+		}
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		if (checkLength(phoneNumber, 9)) {
+			this.phoneNumber = phoneNumber;
+		}
+	}
+	
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	
+	public void setGradeLevel() {
+		if (gradeLevel > 0 && gradeLevel < 13) {
+			this.gradeLevel = gradeLevel;
+		}
+	}
+
+	public int getGradeLevel() {
+		return gradeLevel;
+	}
+
+
+
 }
+
+
+
+
