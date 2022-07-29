@@ -59,7 +59,7 @@ public class Student {
 	// }
 	
 	/* 
-	 * Private methods (doesn't need to be accesssed outside but internal class
+	 * Private methods (doesn't need to be accessed outside but internal class
 	 */
 	private boolean checkLength(String str, int length) {
 		return str.length() > length;
